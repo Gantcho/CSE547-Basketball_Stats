@@ -22,7 +22,7 @@ class CVD_MLP_v1(nn.Module):
     def __init__(self, n_hidden=2, hidden_sz=100, p_dropout=0.1):
         super(CVD_MLP_v1, self).__init__()
 
-        self.n_in = 192 # toy/mog.py defines a 2D dataset
+        self.n_in = 456 # toy/mog.py defines a 2D dataset
         self.n_hidden = n_hidden # number of hidden layers (e.g., 1 or 2), default=2
         self.hidden_sz = hidden_sz # number of elements in each hidden layer (e.g., 50, 100), default=100
         self.n_out = 12 # toy/mog.py defines a 3-class dataset
