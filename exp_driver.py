@@ -29,7 +29,8 @@ def train_model(par):
         opt.load_state_dict(model_['mdl__state_dict'])
     
     # SET TRAIN AND TEST FILES AS YOU WISH
-    X_data = np.load('player_avg_features.npy')
+    #X_data = np.load('player_avg_features.npy')
+    X_data = np.load('player_profiles_with_synergies.npy')
     y_data = np.load('player_game_scores.npy')
     baseline = np.load('player_profiles.npy')
     X_data = np.float32(X_data)
@@ -75,7 +76,7 @@ def train_model(par):
     print(f"BASELINE MSE: {criterion(torch.from_numpy(baseline_preds), torch.from_numpy(y_data))}")
 
 def train_xgb(par):
-    X_data = np.load('player_avg_features.npy')
+    X_data = np.load('player_profiles_with_synergies.npy')
     y_data = np.load('player_game_scores.npy')
     # baseline = np.load('player_profiles.npy')
     X_data = np.float32(X_data)
